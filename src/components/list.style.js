@@ -6,7 +6,7 @@ export const List = styled.ul`
   justify-content: center;
   justify-items: center;
   list-style: none;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
   margin-top: 50px;
   overflow-y: scroll;
 
@@ -31,5 +31,18 @@ export const List = styled.ul`
     border-bottom: 6px solid #ff1510;
     height: auto;
     width: 188px;
+  }
+`;
+
+export const HeartButton = styled.button`
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+
+  svg {
+    path {
+      fill: ${(props) => props.favourite ? "#ff1510" : ""};
+    }
   }
 `;
