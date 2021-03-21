@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { GetComics } from "../services/comics";
 import { GetHero } from "../services/hero";
-import { Footer } from "./home.style";
 import rating from "../images/rating.png";
 import book from "../images/book.png";
 import video from "../images/video.png";
-import { ComicsList, IconWrapper, HeroWrapper, HeroInfo, InfoWrapper, HeroImage } from "./hero.style";
+import { ComicsList, IconWrapper, HeroWrapper, HeroInfo, InfoWrapper, HeroImage, Loading, DataWrapper } from "./hero.style";
 
 export function HeroPage() {
 
@@ -18,6 +17,12 @@ export function HeroPage() {
   const heroFile = hero?.data?.results;
   const { comics } = GetComics(heroId?.id);
   const allComics = comics?.data?.results;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (heroFile) setLoading(!loading);
+  }, [comics])
+
 
   return (
     <>
@@ -28,16 +33,18 @@ export function HeroPage() {
               <InfoWrapper>
                 <h2>{item?.name}</h2>
                 <p>{item?.description || "Descrição não disponível"}</p>
-                <IconWrapper>
-                  <p>Quadrinhos: {item?.comics?.available}</p>
-                  <img src={book} alt="quadrinhos" />
-                  <p>{item?.comics?.available}</p>
-                </IconWrapper>
-                <IconWrapper>
-                  <p>Séries</p>
-                  <img src={video} alt="vídeo"/>
-                  <p>{item?.series?.available}</p>
-                </IconWrapper>
+                <DataWrapper>
+                  <IconWrapper>
+                    <p>Quadrinhos</p>
+                    <img src={book} alt="quadrinhos" />
+                    <label>{item?.comics?.available}</label>
+                  </IconWrapper>
+                  <IconWrapper>
+                    <p>Séries</p>
+                    <img src={video} alt="vídeo"/>
+                    <label>{item?.series?.available}</label>
+                  </IconWrapper>
+                </DataWrapper>
                 <label>Rating: </label>
                 <img src={rating} alt="avaliação"/>
               </InfoWrapper>
@@ -48,6 +55,12 @@ export function HeroPage() {
           )}
         </HeroInfo>
         <h3>Últimos lançamentos</h3>
+        {loading ? (
+          <Loading>
+            <box-icon name='loader-circle' rotate='90' animation='spin' color='#ff1510'/>
+            <label> Carregando...</label>
+          </Loading>
+        ): null}
         <ComicsList>
           {allComics?.map((item) =>
             <li tabIndex="0">
@@ -57,7 +70,6 @@ export function HeroPage() {
           )}
         </ComicsList>
       </HeroWrapper>
-      <Footer />
     </>
   )
 }
