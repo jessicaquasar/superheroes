@@ -2,13 +2,19 @@ import styled from "styled-components";
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(4, minmax(304px, auto));
   justify-content: center;
   justify-items: center;
   list-style: none;
   margin-bottom: 40px;
   margin-top: 50px;
   overflow-y: scroll;
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 
   p {
     font-weight: bold;
@@ -30,7 +36,11 @@ export const List = styled.ul`
     cursor: pointer;
     border-bottom: 6px solid #ff1510;
     height: auto;
-    width: 188px;
+    width: 244px;
+
+    @media screen and (max-width: 1024px) {
+      width: 188px;
+    }
   }
 `;
 
@@ -52,7 +62,7 @@ export const Sort = styled.div`
   color: #ff1510;
   display: flex;
   justify-content: flex-end;
-  margin: 0 8px;
+  margin: 16px 44px;
 
   img, label {
     margin-right: 16px;

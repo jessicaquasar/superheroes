@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import marvel from "../images/marvel.png";
 
 export const HeroWrapper = styled.div`
   background-color: #e7f6e7;
@@ -117,5 +118,50 @@ export const Loading = styled.div`
 
   label {
     margin-left: 8px;
+  }
+`;
+
+export const HeroSearchInput = styled.input`
+  appearance: none;
+  border: 1px solid white;
+  border-radius: 24px;
+  font-size: 1rem;
+  padding: 16px 16px 16px 66px;
+  width: 50%;
+`;
+
+export const HeroLogo = styled.div`
+  background-image: url(${marvel});
+  background-position-x: left;
+  background-repeat: no-repeat;
+  height: 124px;
+  width: 400px;
+`;
+
+export const HeroForm = styled.form`
+  display: flex;
+  justify-content: center;
+  position relative; 
+
+  img {
+    left: 24%;
+    position: absolute;
+    top: 16px;
+  }
+`;
+
+export const HeroSearchWrapper = styled.div`
+  align-items: center;
+  background-color: #e7f6e7;
+  display: flex;
+  padding: 48px 120px;
+
+  @media screen and (max-width: 425px) {
+    flex-wrap: wrap;
+    padding: 8px 4px;
+    
+    input {
+      margin-bottom: 16px;
+    }
   }
 `;
