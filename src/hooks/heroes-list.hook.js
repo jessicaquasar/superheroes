@@ -21,6 +21,7 @@ export const useHeroSearch = (name) => {
           .catch((error) => console.log(error.message))
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [superHeroName]);
 
   useEffect(() => {

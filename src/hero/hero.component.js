@@ -50,6 +50,7 @@ export function HeroPage() {
 
   useEffect(() => {
     if (heroFile) setLoading(!loading);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [comics]);
 
   function onSubmit(e) {

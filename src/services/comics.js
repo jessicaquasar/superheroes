@@ -19,6 +19,7 @@ export function GetComics(heroId) {
           .catch((error) => console.log(error.message))
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [superHeroId]);
 
   return { comics };

@@ -19,6 +19,7 @@ export function GetHero(name) {
           .catch((error) => console.log(error.message))
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [superHeroName]);
 
   return { hero };
