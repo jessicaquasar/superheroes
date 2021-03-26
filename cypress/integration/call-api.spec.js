@@ -13,7 +13,7 @@ describe("Call API", () => {
     const hash = configs.hash;
 
     cy.request(
-      `http://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+      `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
     ).then((response) => {
       expect(response.body).to.have.property("code", 200);
     });

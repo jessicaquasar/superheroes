@@ -13,7 +13,7 @@ export const useHeroSearch = (name) => {
   useEffect(() => {
     if (superHeroName) {
       fetch(
-        `http://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&name=${superHeroName}&limit=10`
+        `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&name=${superHeroName}&limit=10`
       ).then((response) =>
         response
           .json()

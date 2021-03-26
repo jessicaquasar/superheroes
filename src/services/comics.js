@@ -11,7 +11,7 @@ export function GetComics(heroId) {
   useEffect(() => {
     if (superHeroId) {
       fetch(
-        `http://gateway.marvel.com/v1/public/characters/${superHeroId}/comics?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+        `https://gateway.marvel.com/v1/public/characters/${superHeroId}/comics?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
       ).then((response) =>
         response
           .json()
