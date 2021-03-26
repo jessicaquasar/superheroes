@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import marvel from "../images/marvel.png";
 
-export const HeroWrapper = styled.div`
+export const Wrapper = styled.div`
   background-color: #e7f6e7;
-  padding: 160px;
+  height: 100%;
+`;
+
+export const HeroWrapper = styled.div`
+  padding: 24px 160px;
 
   @media screen and (max-width: 1024px) {
     padding: 0;
@@ -19,7 +23,7 @@ export const HeroInfo = styled.ul`
     height: auto;
     width: 100px;
   }
-  
+
   li {
     display: flex;
     justify-content: space-between;
@@ -52,7 +56,7 @@ export const IconWrapper = styled.div`
     width: 24px;
   }
 `;
-  
+
 export const HeroImage = styled.div`
   img {
     border-radius: 4px;
@@ -75,11 +79,11 @@ export const InfoWrapper = styled.div`
     width: 260px;
   }
 
-  p, label {
+  p,
+  label {
     color: #8c8c8c;
     font-weight: bold;
   }
-
 `;
 
 export const ComicsList = styled.ul`
@@ -99,11 +103,11 @@ export const ComicsList = styled.ul`
   li {
     margin-right: 40px;
   }
-  
+
   img {
     border-radius: 2px;
     height: 132px;
-    width: 104px; 
+    width: 104px;
   }
 
   p {
@@ -127,7 +131,11 @@ export const HeroSearchInput = styled.input`
   border-radius: 24px;
   font-size: 1rem;
   padding: 16px 16px 16px 66px;
-  width: 50%;
+  width: 400px;
+
+  @media screen and (max-width: 1024px) {
+    width: 200px;
+  }
 `;
 
 export const HeroLogo = styled.div`
@@ -144,7 +152,7 @@ export const HeroForm = styled.form`
   position relative; 
 
   img {
-    left: 24%;
+    left: 24px;
     position: absolute;
     top: 16px;
   }
@@ -159,7 +167,7 @@ export const HeroSearchWrapper = styled.div`
   @media screen and (max-width: 425px) {
     flex-wrap: wrap;
     padding: 8px 4px;
-    
+
     input {
       margin-bottom: 16px;
     }

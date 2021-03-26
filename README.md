@@ -1,18 +1,19 @@
 # Superheroes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto criado com [Create React App](https://github.com/facebook/create-react-app).\
+Clone o repositório, navegue até a pasta do projeto em um terminal e execute`yarn` para instalar as dependências.
 
-## Available Scripts
-
-In the project directory, you can run:
+## Scripts Disponíveis
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Executa a aplicação em modo de desenvolvimento.\
+Acesse [http://localhost:3000](http://localhost:3000) para visualizar no navegador.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
+Realiza os testes unitários presentes na aplicação.\
 
+### `yarn:cypress run`
 
+Executa os testes de integração.\

@@ -1,0 +1,10 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "viewportWidth": 1024,
+  "viewportHeight": 768,
+  "video": false,
+  "chromeWebSecurity": false,
+  "defaultCommandTimeout": 30000,
+  "pageLoadTimeout": 30000,
+  "responseTimeout": 30000
+}

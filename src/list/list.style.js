@@ -1,13 +1,22 @@
 import styled from "styled-components";
 
+export const ListWrapper = styled.section`
+  margin: 8px 200px;
+
+  @media screen and (max-width: 768px) {
+    margin: 8px 16px;
+  }
+`;
+
 export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, minmax(304px, auto));
   justify-content: center;
   justify-items: center;
   list-style: none;
-  margin-bottom: 40px;
-  margin-top: 50px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  max-height: 400px;
   overflow-y: scroll;
 
   @media screen and (max-width: 1024px) {
@@ -16,7 +25,7 @@ export const List = styled.ul`
     justify-content: space-evenly;
   }
 
-  p {
+  label {
     font-weight: bold;
   }
 
@@ -36,6 +45,7 @@ export const List = styled.ul`
     cursor: pointer;
     border-bottom: 6px solid #ff1510;
     height: auto;
+    margin-bottom: 4px;
     width: 244px;
 
     @media screen and (max-width: 1024px) {
@@ -50,21 +60,22 @@ export const HeartButton = styled.button`
   cursor: pointer;
   background: transparent;
 
-  svg {
+  [data-icon="svg-icon"] {
     path {
-      fill: ${(props) => props.favourite ? "#ff1510" : ""};
+      fill: #ff1510;
     }
   }
 `;
 
 export const Sort = styled.div`
-  align-items: center; 
+  align-items: center;
   color: #ff1510;
   display: flex;
   justify-content: flex-end;
   margin: 16px 44px;
 
-  img, label {
+  img,
+  label {
     margin-right: 16px;
   }
 `;

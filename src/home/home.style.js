@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import marvelLogo from "../images/marvel.png";
 
+export const HomeWrapper = styled.main`
+  margin: 16px;
+`;
+
 export const Header = styled.header`
   margin-bottom: 52px;
   text-align: center;
@@ -47,7 +51,7 @@ export const SearchInput = styled.input`
 `;
 
 export const Footer = styled.footer`
-  background-color: #FF1510;
+  background-color: #ff1510;
   bottom: 0;
   height: 80px;
   position: fixed;

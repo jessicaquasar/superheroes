@@ -15,13 +15,13 @@ describe("Testing Home", () => {
 
 describe("Testing Router", () => {
   it("should go to 'Home'", () => {
-    const history = createMemoryHistory()
+    const history = createMemoryHistory();
     render(
       <Router history={history}>
         <Home />
       </Router>
-    )
-    
+    );
+
     expect(screen.getByText("EXPLORE O UNIVERSO")).toBeInTheDocument();
   });
 });
