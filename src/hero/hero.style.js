@@ -3,11 +3,10 @@ import marvel from "../images/marvel.png";
 
 export const Wrapper = styled.div`
   background-color: #e7f6e7;
-  height: 100%;
 `;
 
 export const HeroWrapper = styled.div`
-  padding: 24px 160px;
+  padding: 24px 160px 160px 100px;
 
   @media screen and (max-width: 1024px) {
     padding: 0;
@@ -91,8 +90,8 @@ export const ComicsList = styled.ul`
   flex-wrap: wrap;
   justify-content: flex-start;
   list-style: none;
-  margin-bottom: 40px;
-  margin-top: 50px;
+  max-height: 416px;
+  overflow-y: auto;
 
   @media screen and (max-width: 425px) {
     flex-wrap: nowrap;

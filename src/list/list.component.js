@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { string } from "prop-types";
 import { useHeroSearch } from "../hooks/heroes-list.hook";
@@ -16,7 +16,6 @@ import { ReactComponent as Heart } from "../images/heart.svg";
 
 export function HeroesList({ heroName }) {
   const { heroesList } = useHeroSearch({ heroName });
-  const [favourite, setFavourite] = useState(false);
   const [sort, setSort] = useState(false);
   const [sortList, setSortList] = useState([]);
 
@@ -24,26 +23,6 @@ export function HeroesList({ heroName }) {
     const sorted = [...heroesList];
     setSortList(sorted.sort((a, b) => (a.name > b.name ? 1 : -1)));
   }
-
-  function favouriteHero(item) {
-    console.log({ item });
-    setFavourite(() => [...favourite, item.item]);
-    // heroesList.map((v) => {
-    //   if (v.id === item.item.id) {
-    //     console.log("iiii");
-    //     // setFavourite(!favourite);
-    //     // return setTest([{ ...v, favourite: !v.favourite }]);
-    //   }
-    //   // return setTest(item.item);
-    //   return 1;
-    // });
-
-    // adicionar a uma lista de favoritos
-  }
-
-  useEffect(() => {
-    if (favourite) console.log(favourite);
-  }, [favourite]);
 
   return (
     <ListWrapper>
@@ -67,7 +46,6 @@ export function HeroesList({ heroName }) {
         {sort
           ? sortList.map((item) => (
               <li key={item?.name} tabIndex="0">
-                {console.log({ sortList })}
                 <Link
                   to={{
                     pathname: `/hero/${item?.name}`,
@@ -83,11 +61,7 @@ export function HeroesList({ heroName }) {
                   <label aria-label={item?.name} data-testid="list-label-hero">
                     {item?.name}
                   </label>
-                  <HeartButton
-                    type="button"
-                    onClick={() => favouriteHero({ item })}
-                    favourite={!favourite}
-                  >
+                  <HeartButton type="button">
                     <Heart data-icon="svg-icon" />
                   </HeartButton>
                 </div>
@@ -110,11 +84,7 @@ export function HeroesList({ heroName }) {
                   <label aria-label={item?.name} data-testid="list-label-hero">
                     {item?.name}
                   </label>
-                  <HeartButton
-                    type="button"
-                    onClick={() => console.log("click")}
-                    favourite={(prev) => !prev}
-                  >
+                  <HeartButton type="button">
                     <Heart data-icon="svg-icon" />
                   </HeartButton>
                 </div>

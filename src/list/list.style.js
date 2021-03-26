@@ -17,7 +17,7 @@ export const List = styled.ul`
   margin-bottom: 24px;
   margin-top: 24px;
   max-height: 400px;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   @media screen and (max-width: 1024px) {
     display: flex;

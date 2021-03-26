@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { configs } from "../config/config";
 
 export const useHeroSearch = (name) => {
-  console.log("Cau");
   const timestamp = configs.ts;
   const publicKey = configs.pk;
   const hash = configs.hash;

@@ -1,7 +1,7 @@
 # Superheroes
 
 Projeto criado com [Create React App](https://github.com/facebook/create-react-app).\
-Clone o repositório, navegue até a pasta do projeto em um terminal e execute`yarn` para instalar as dependências.
+Para instalar as dependências rode o comando `yarn` no diretório do projeto.
 
 ## Scripts Disponíveis
 
@@ -12,8 +12,8 @@ Acesse [http://localhost:3000](http://localhost:3000) para visualizar no navegad
 
 ### `yarn test`
 
-Realiza os testes unitários presentes na aplicação.\
+Realiza os testes unitários presentes na aplicação.
 
 ### `yarn:cypress run`
 
-Executa os testes de integração.\
+Executa os testes de integração.

@@ -1,4 +1,3 @@
-import { func } from "prop-types";
 import React from "react";
 import notFound from "../images/404.jpg";
 import styled from "styled-components";
@@ -16,7 +15,7 @@ export const NotFoundWrapper = styled.div`
 export function NotFound() {
   return (
     <NotFoundWrapper>
-      <img src={notFound} alt="página não encontrada"/>
+      <img src={notFound} alt="página não encontrada" />
     </NotFoundWrapper>
-  )
-};
+  );
+}

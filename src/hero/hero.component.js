@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { GetComics } from "../services/comics";
-import { HeroesListContext } from "../hooks/heroes-list.context";
 import { GetHero } from "../services/hero";
 import search from "../images/search.png";
 import rating from "../images/rating.png";
@@ -36,7 +35,6 @@ export function HeroPage() {
   const allComics = comics?.data?.results;
   const [loading, setLoading] = useState(true);
   const [searchHero, setSearchHero] = useState("");
-  const { heroesList, setHeroesList } = useContext(HeroesListContext);
 
   useEffect(() => {
     if (hero?.code === 404) {
@@ -56,9 +54,8 @@ export function HeroPage() {
 
   function onSubmit(e) {
     e.preventDefault();
-    console.log({ searchHero });
-    setHeroesList(() => searchHero);
     history.push("/");
+    // TO DO
     return <HeroesList heroName={searchHero} />;
   }
 
@@ -106,7 +103,7 @@ export function HeroPage() {
                       <label>{item?.series?.available}</label>
                     </IconWrapper>
                   </DataWrapper>
-                  <label>Rating </label>
+                  <label>Rating: </label>
                   <img src={rating} alt="" />
                 </InfoWrapper>
                 <HeroImage>

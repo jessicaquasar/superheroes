@@ -6,14 +6,11 @@ import "./index.css";
 import { Home } from "./home/home.component";
 import { HeroPage } from "./hero/hero.component";
 import { NotFound } from "./notFound/notFound.component";
-import { HeroesListContext } from "./hooks/heroes-list.context";
 import { Footer } from "./home/home.style";
 
 export function App() {
-  const [heroesList, setHeroesList] = useState([]);
-
   return (
-    <HeroesListContext.Provider value={{ heroesList, setHeroesList }}>
+    <>
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Home} />
@@ -33,6 +30,6 @@ export function App() {
         draggable
         pauseOnHover
       />
-    </HeroesListContext.Provider>
+    </>
   );
 }
